@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 750" role="img" aria-labelledby="title">
+  <title id="title">Pôster indisponível</title>
+  <rect width="500" height="750" fill="#242320"/>
+  <rect x="32" y="32" width="436" height="686" rx="8" fill="none" stroke="#4b463d" stroke-width="2"/>
+  <path d="M205 315h90v120h-90z" fill="none" stroke="#b18a4f" stroke-width="8"/>
+  <path d="m239 344 39 31-39 31z" fill="#b18a4f"/>
+  <text x="250" y="485" fill="#d4cec3" font-family="Arial,sans-serif" font-size="22" text-anchor="middle">Pôster indisponível</text>
+</svg>

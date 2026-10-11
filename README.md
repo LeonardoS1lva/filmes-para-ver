@@ -33,6 +33,12 @@ pnpm run lint:check
 quasar build
 ```
 
+### Configure the TMDB API
+
+Copy `.env.example` to `.env` and set `QCLI_TMDB_ACCESS_TOKEN` to your TMDB API Read Access Token. Restart the development server after changing environment variables.
+
+This is a client-side application, so the token is included in the browser bundle and is publicly inspectable. Do not use a token that must remain confidential.
+
 ### Customize the configuration
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-file).

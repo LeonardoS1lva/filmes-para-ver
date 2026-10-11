@@ -1,1 +1,20 @@
-/* app global css */
+body {
+  min-width: 320px;
+  background: #11110f;
+  color: #f1eee8;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+:root {
+  --movie-bg: #11110f;
+  --movie-card: #1a1917;
+  --movie-border: #302e2a;
+  --movie-text: #f1eee8;
+  --movie-muted: #a09b92;
+  --movie-accent: #e2b262;
+}
+
+::selection {
+  background: rgb(226 178 98 / 30%);
+  color: #fff;
+}
