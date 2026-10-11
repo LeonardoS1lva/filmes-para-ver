@@ -21,7 +21,7 @@
           Encontre um filme e guarde na sua lista para assistir quando quiser.
         </p>
 
-        <q-form class="search-form" @submit.prevent="searchMovies">
+        <div class="search-form">
           <q-input
             :model-value="searchTerm"
             class="movie-search"
@@ -38,19 +38,7 @@
               <q-icon name="search" />
             </template>
           </q-input>
-          <q-btn
-            class="search-button"
-            type="submit"
-            :loading="searchLoading"
-            :disable="searchLoading && pendingQuery === searchTerm.trim()"
-            color="amber-8"
-            text-color="dark"
-            unelevated
-            no-caps
-            icon="search"
-            label="Buscar filmes"
-          />
-        </q-form>
+        </div>
 
         <q-banner v-if="wishlistError" class="feedback-banner" rounded dense role="alert">
           {{ wishlistError }}
@@ -260,16 +248,6 @@ watch(searchTerm, (value, _, onCleanup) => {
   onCleanup(() => clearTimeout(debounceTimer))
 })
 
-function searchMovies() {
-  const query = typeof searchTerm.value === 'string' ? searchTerm.value.trim() : ''
-  if (!query) {
-    return
-  }
-
-  clearTimeout(debounceTimer)
-  runSearch(query)
-}
-
 function updateSearchTerm(value) {
   searchTerm.value = typeof value === 'string' ? value : ''
 }
@@ -468,19 +446,11 @@ function confirmRemoval() {
   display: flex;
   max-width: 740px;
   align-items: flex-start;
-  gap: 12px;
   margin-top: 25px;
 }
 
 .movie-search {
   flex: 1;
-}
-
-.search-button {
-  min-height: 56px;
-  padding: 0 19px;
-  border-radius: 8px;
-  font-weight: 650;
 }
 
 .search-results {
@@ -793,18 +763,8 @@ function confirmRemoval() {
     font-size: 12px;
   }
 
-  .search-form {
-    flex-direction: column;
-    gap: 9px;
-  }
-
-  .movie-search,
-  .search-button {
+  .movie-search {
     width: 100%;
-  }
-
-  .search-button {
-    min-height: 48px;
   }
 
   .movie-grid {
